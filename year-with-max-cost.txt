@@ -1,0 +1,41 @@
+with cte1 as
+
+(
+
+select 
+
+ release_year,
+
+ MAX(cost_usd)OVER(partition by release_year) as max_cost
+
+from cars
+
+order by max_cost desc
+
+limit 1
+
+)
+
+select release_year as max_year
+
+from cte1;
+
+
+
+The thing in the cte1 can be replaced by a group by clause also, but probably it would be not that dynamic. Here's that-
+
+
+
+select 
+
+ release_year, 
+
+ max(cost_usd) as max_cost
+
+from cars
+
+group by release_year
+
+order by 2 desc
+
+limit 1;
