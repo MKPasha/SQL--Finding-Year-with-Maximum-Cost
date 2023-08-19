@@ -1,1 +1,1 @@
-# SQL--Finding-Year-with-Maximum-Cost
+# SQL-Finding-Year-with-Maximum-Cost
